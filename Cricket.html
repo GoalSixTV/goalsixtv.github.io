@@ -1,0 +1,112 @@
+<!--DOCTYPE html--> 
+<html lang="en"> 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0 , user-scalable=no">
+    <meta name="viewport" content="width=device-width" />
+    <!-- SEO-->
+    <meta name="author" content="T20HD Embed" />
+    <meta name="designer" content="T20 " />
+    <meta name="description" content="Watch Live Streaming T20. No signup required">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+     <link rel="stylesheet" href="/dist/wmlogo.css" />
+    <script src="https://kit.fontawesome.com/bf2610f0a2.js" crossorigin="anonymous"></script>
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/css/halfmoon.min.css" rel="stylesheet" />
+    <title>GoalSixTV player  </title>
+
+
+</head>
+<style>
+
+    .btn {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 5px;
+      color: #aaa;
+      font-size: .875em
+    }
+    .btn2g {
+      display: block;
+      width: 100%;
+      background-color: #b31a18;
+      margin: -2px 0px 5px auto;
+      padding: 16px 0px 12px 0px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 100%;
+      text-indent: 15px;
+      text-align: left
+    }
+    .vdo player{
+      width:5px;
+    }
+</style>
+
+
+
+
+<div class="btn2g">
+      <b>
+        <font color="#ffffff">Sports tv player</font>
+      </b>
+      <br />
+    </div>
+    
+  
+
+  
+<script>
+document.addEventListener("DOMContentLoaded",()=> {
+  const e = document.querySelector("video"),
+    n = e.getElementsByTagName("source")[0].src,
+    o = {};
+  if(Hls.isSupported()) {
+    var config = {
+      maxMaxBufferLength: 100,
+    };
+    const t = new Hls(config);
+    t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
+      const s = t.levels.map(e => e.height);
+      o.quality = {
+        default: s[0],
+        options: s,
+        forced: !0,
+        onChange: e => (function(e) {
+          window.hls.levels.forEach((n, o) => {
+            n.height === e && (window.hls.currentLevel = o)
+          })
+        })(e)
+      };
+      new Plyr(e, o)
+    }), t.attachMedia(e), window.hls = t
+  } else {
+    new Plyr(e, o)
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
+<body class="dark-mode with-custom-scrollbars with-custom-css-scrollbars">
+   
+<video id="player" controls preload="metadata" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYRQezbt5IQ4UjNPxEPRaVNybaFS8P0gRwtDzJGmAoXuz2UxCQH42PLNDjBYQs4GHDUTxHTkY0KCQQ8rchIXvS1OQm8mVdemkbgk2P_qg7G9rp6ksUqS5Sm1oqRrUafcYELOkHAoT27DxMSaGIT39T5j90leAfzE3RL64zk3fLizMhFVkNcjpFM3n8uhz-/w640-h640/20240310_075744-removebg-preview.png" class="plyr">
+
+<source src=""/>
+
+</video>
+<script>      document.addEventListener('DOMContentLoaded', () => {          const player = Plyr.setup('.js-player');      });  </script>
+
+
+<script>      document.addEventListener('DOMContentLoaded', () => {          const player = Plyr.setup('.js-player');      });  </script>
+
+<div class="btn2g">
+      <b>
+        <font style="text-align: center;" color="#ffffff">© All right reserved Sports Tv</font>
+      </b>
+      <br />
+    </div>
+
+</body>
+</html>
