@@ -1,0 +1,105 @@
+
+
+<!--DOCTYPE html--> 
+<html lang="en"> 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0 , user-scalable=no">
+    <meta name="viewport" content="width=device-width" />
+    <!-- SEO-->
+    <meta name="author" content="T20HD Embed" />
+    <meta name="designer" content="T20 " />
+    <meta name="description" content="Watch Live Streaming T20. No signup required">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+     <link rel="stylesheet" href="/dist/wmlogo.css" />
+    <script src="https://kit.fontawesome.com/bf2610f0a2.js" crossorigin="anonymous"></script>
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/css/halfmoon.min.css" rel="stylesheet" />
+    <title>GoalSixTV player  </title>
+
+  
+<script>
+document.addEventListener("DOMContentLoaded",()=> {
+  const e = document.querySelector("video"),
+    n = e.getElementsByTagName("source")[0].src,
+    o = {};
+  if(Hls.isSupported()) {
+    var config = {
+      maxMaxBufferLength: 100,
+    };
+    const t = new Hls(config);
+    t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
+      const s = t.levels.map(e => e.height);
+      o.quality = {
+        default: s[0],
+        options: s,
+        forced: !0,
+        onChange: e => (function(e) {
+          window.hls.levels.forEach((n, o) => {
+            n.height === e && (window.hls.currentLevel = o)
+          })
+        })(e)
+      };
+      new Plyr(e, o)
+    }), t.attachMedia(e), window.hls = t
+  } else {
+    new Plyr(e, o)
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
+</head>
+<body class="dark-mode with-custom-scrollbars with-custom-css-scrollbars">
+   
+<video id="player" controls preload="metadata" poster="https://i.ibb.co/phxR1ng/20240609-121427.png" class="plyr">
+<iframe sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iframe" allow="encrypted-media" 
+      allowfullscreen="allowfullscreen"
+      allowtransparency="true" frameborder="0" height="100%" marginheight="0" scrolling="no" marginwidth="0"  width="100%"></iframe>
+    </div>
+
+    <div id="jwPlayer"></div>
+  </div>
+
+  <script>
+    // Get the `src` parameter from the URL.
+    const urlParams = new URLSearchParams(window.location.search);
+    const srcParam = urlParams.get('src');
+    const videoUrl = urlParams.get('hls');
+    
+    if (srcParam) {
+      // Show the iframe player
+      document.getElementById('iframe').src = srcParam;
+      document.getElementById('jwPlayer').style.display = 'none';
+    } else if (videoUrl) {
+      // Show the JW Player
+      jwplayer("jwPlayer").setup({
+        file: videoUrl,
+      });
+      document.getElementById('iframe').style.display = 'none';
+    }
+
+    // Optional overlay script
+    setTimeout(function () {
+      document.getElementById('overlay').style.display = 'none';
+      var newurl = urlParams.get('newurl');
+      if (newurl) {
+        document.getElementById('myIframe').src = newurl;
+      }
+    }, 30000);
+  </script>
+</video>
+<script>      document.addEventListener('DOMContentLoaded', () => {          const player = Plyr.setup('.js-player');      });  </script>
+
+
+<script>      document.addEventListener('DOMContentLoaded', () => {          const player = Plyr.setup('.js-player');      });  </script>
+
+
+
+
+
+
+</body>
+</html>
