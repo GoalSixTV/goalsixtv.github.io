@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
     font-weight: bold;
@@ -19,7 +19,7 @@
 }
 .box-text {
     flex-grow: 1;
-    margin-left: 20px;
+    margin-left: 10px;
     text-decoration: none; /* Remove underline */
     color: black; /* Ensure the text color is black */
 }
