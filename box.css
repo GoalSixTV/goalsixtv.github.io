@@ -10,8 +10,7 @@
     font-weight: bold;
     text-decoration: none;
     color: black;
-    flex-wrap: nowrap; /* Ensure items don't wrap within the box */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 .box img {
     width: 40px;
