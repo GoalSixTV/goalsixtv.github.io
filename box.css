@@ -1,6 +1,17 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-  .box {
+.box {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,37 +19,58 @@
     margin-bottom: 10px;
     border: 2px solid black;
     font-weight: bold;
-    text-decoration: none;
     color: black;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .box img {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
 }
+
 .box-text {
     flex-grow: 1;
     margin-left: 10px;
-    text-decoration: none; /* Remove underline */
-    color: black; /* Ensure the text color is black */
+    text-decoration: none;
+    color: black;
 }
 
-.link-box:hover {
-    background-color: #d0d0d0; /* Medium-light grey background on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly more noticeable shadow effect on hover */
+.box:hover {
+    background-color: #d0d0d0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.link-box:hover .link-text, .link-box:hover a {
-    color: black; /* Ensure the link text color remains black on hover */
+
+.link {
+    background: red;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 10px;
+    user-select: none;
+    width: 100%;
+    text-align: center;
+    border: 0;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.link:hover {
+    background-color: darkred;
 }
 
 .blink {
     animation: blink-animation 1s linear infinite;
-    font-size: 11px; /* Set font size to 5px */
+    font-size: 11px;
 }
 
 @keyframes blink-animation {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-}
-
+  }
